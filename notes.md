@@ -1,0 +1,1 @@
+- Códigos de login e create account na home ao invés de dentro do custom header => facilita manutenção
