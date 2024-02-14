@@ -49,7 +49,9 @@ const modalToRender = {
       v-if="state.isActive"
       @click.self="handleModalToggle({ status: false })"
     >
-      <div class="grid bg-white rounded-lg animate__animated animate__fadeInDown animate__faster">
+      <div
+        class="w-[92%] max-w-[40rem] grid bg-white rounded-lg animate__animated animate__fadeInDown animate__faster"
+      >
         <div class="grid px-12 py-10 bg-white">
           <Component :is="modalToRender[state.component]" v-bind="state.props" />
         </div>
