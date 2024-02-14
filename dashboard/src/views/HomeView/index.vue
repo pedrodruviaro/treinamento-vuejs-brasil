@@ -1,15 +1,22 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useModal } from '@/hooks/useModal'
 import Contact from './Contact.vue'
 import CustomHeader from './CustomHeader.vue'
 
+const modal = useModal()
+
 function handleLogin() {
-  console.log('login')
+  modal.open({
+    component: 'ModalLogin'
+  })
 }
 
 function handleAccountCreate() {
-  console.log('create')
+  modal.open({
+    component: 'ModalCreateAccount'
+  })
 }
 
 const router = useRouter()

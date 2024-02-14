@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+const emit = defineEmits(['login', 'createAccount'])
+</script>
 
 <template>
   <header class="bg-brand-main text-white py-3 grid">
@@ -6,8 +8,13 @@
       <img src="@/assets/images/logo_white.png" alt="Feedbacker" class="max-w-40" />
 
       <nav class="flex items-center gap-4">
-        <button class="font-bold p-2">Crie uma conta</button>
-        <button class="bg-white text-brand-main rounded-full font-bold px-6 py-2">Entrar</button>
+        <button class="font-bold p-2" @click="emit('createAccount')">Crie uma conta</button>
+        <button
+          class="bg-white text-brand-main rounded-full font-bold px-6 py-2"
+          @click="emit('login')"
+        >
+          Entrar
+        </button>
       </nav>
     </div>
   </header>
@@ -21,7 +28,10 @@
         <p class="my-4 lg:my-8 text-lg max-w-[33ch]">
           Receba ideias, reclamações e feedbacks com um simples widget na página.
         </p>
-        <button class="bg-white text-brand-main rounded-full font-bold px-6 py-2">
+        <button
+          class="bg-white text-brand-main rounded-full font-bold px-6 py-2"
+          @click="emit('createAccount')"
+        >
           Crie uma conta grátis
         </button>
       </div>
